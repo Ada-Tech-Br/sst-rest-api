@@ -1,0 +1,14 @@
+version: '3.9'
+name: sst-rest-api
+services:
+  mysql:
+    container_name: sst_rest_api_mysql
+    platform: linux/x86_64
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: sst
+    ports:
+      - '3306:3306'
+    volumes:
+      - './.docker-volumes/mysql-sst:/var/lib/mysql'
